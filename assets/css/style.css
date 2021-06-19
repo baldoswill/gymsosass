@@ -27,6 +27,20 @@
 .btn--regular-orange:hover {
   background-color: #fff;
   color: #f13a11;
+  cursor: pointer;
+}
+.btn--regular-dark {
+  background-color: transparent;
+  transition: 300ms ease-in-out all;
+  color: #fff;
+  background-color: #171819;
+  padding-top: 1.4em;
+  padding-bottom: 1.4em;
+}
+.btn--regular-dark:hover {
+  background-color: #f13a11;
+  color: #fff;
+  cursor: pointer;
 }
 .btn--block {
   display: block;
@@ -457,12 +471,19 @@ ul {
 .contact__wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 .contact__wrapper > * {
-  width: 40%;
+  width: 50%;
   grid-gap: 2rem;
   gap: 2rem;
+}
+.contact__map-box {
+  padding-left: 5rem;
+  text-align: center;
+}
+.contact__form-box {
+  padding-left: 5rem;
 }
 .contact__title {
   text-align: center;
@@ -476,7 +497,7 @@ ul {
   display: block;
   border: 1px solid #bdbdbd;
   margin-bottom: 1.6rem;
-  padding: 1.2rem 1rem;
+  padding: 1.1rem 1rem;
   outline: none;
   color: #626262;
   font-weight: 600;
@@ -490,7 +511,7 @@ ul {
   opacity: 0.5;
   font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 1.7rem;
+  margin-bottom: 2rem;
   text-align: justify;
 }
 .contact__map-box-title {
@@ -500,11 +521,21 @@ ul {
   font-size: 1.5rem;
   font-weight: bolder;
   color: #f13a11;
+  margin-top: 0.2rem;
+  margin-right: 0.2rem;
 }
 .contact__location {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+}
+.contact__divider {
+  border-top: 1px solid #f9f9f9;
+  opacity: 0.2;
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map*/

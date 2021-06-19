@@ -402,17 +402,38 @@
                 placeholder="Message"
               ></textarea>
             </div>
+            <div class="contact__control-group">
+              <button class="btn btn--block btn--regular-dark">
+                Send Message
+              </button>
+            </div>
           </form>
         </div>
         <div class="contact__map-box">
           <h2 class="contact__title contact__map-box-title">
-            Feel free to ask anything
+            Where you can find us
           </h2>
           <div class="contact__location">
             <i class="fas fa-map-marker-alt contact__location-icon"></i>
             <span class="contact__address">
               120-240 Rio de Janeiro - State of Rio de Janeiro, Brazil
             </span>
+          </div>
+          <hr class="contact__divider" />
+
+          <div
+            class="google-map aos-init aos-animate"
+            data-aos="fade-up"
+            data-aos-delay="900"
+          >
+            <iframe
+              src="https://maps.google.com/maps?q=Av.+Lúcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+              style="border: 0"
+              allowfullscreen=""
+              width="100%"
+              height="250"
+              frameborder="0"
+            ></iframe>
           </div>
         </div>
       </div>
