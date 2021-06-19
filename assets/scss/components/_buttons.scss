@@ -1,0 +1,41 @@
+@use "../abstracts/colors" as *;
+
+.btn {
+  padding: 1em 1.7em;
+  display: inline-block;
+  text-align: center;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  transition: 300ms ease-in-out all;
+  font-weight: 700;
+  border-radius: 3px;
+
+  &--outlined-orange {
+    border: 1px solid $orange_color;
+    color: $orange_color;
+    background-color: transparent;
+  }
+
+  &--outlined-orange:hover {
+    cursor: pointer;
+    background-color: $white_color;
+  }
+
+  &--regular-orange {
+    background-color: transparent;
+    transition: 300ms ease-in-out all;
+    color: $white_color;
+    background-color: $orange_color;
+  }
+
+  &--regular-orange:hover {
+    background-color: $white_color;
+    color: $orange_color;
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+}

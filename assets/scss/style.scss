@@ -1,0 +1,452 @@
+@use "./abstracts/" as *;
+@use "./components/" as *;
+
+:root {
+  font-size: 14px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $white_color;
+  line-height: 1.6;
+  font-family: $plain_light;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  max-width: 1160px;
+  margin: auto;
+  overflow: auto;
+}
+
+// Navigation -------------------------------------------------------
+
+.nav {
+  color: $white_color;
+  background-color: $dark_color;
+  padding: 1rem;
+  z-index: 10 !important;
+  position: sticky;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__brand {
+    font-family: "Plain Bold", sans-serif;
+    font-size: 2rem;
+    width: 40%;
+  }
+
+  &__item {
+    margin-right: 2rem;
+  }
+
+  &__links {
+    display: flex;
+    width: 60%;
+    margin-left: 2rem;
+  }
+
+  &__links > * {
+    justify-self: flex-end;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-left: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  &__link {
+    color: $white_color;
+    transition: 300ms ease-in-out color;
+
+    &:hover {
+      @include hover_link();
+    }
+  }
+
+  &__socials {
+    justify-self: flex-end !important;
+    display: flex;
+    width: 20%;
+  }
+
+  &__social-icon {
+    color: $white_color;
+    font-size: 1.7rem;
+    margin-left: 1.2rem;
+    transition: 300ms ease-in-out color;
+
+    &:hover {
+      @include hover_link();
+    }
+  }
+}
+
+// Hero -------------------------------------------------------
+
+.hero {
+  background-image: url("../images/hero-bg.jpg");
+  background-position: center -200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 88vh;
+  color: $white_color;
+  padding: 0 1rem;
+
+  &::before {
+    content: "";
+    background-color: $dark_color_lighter;
+    position: absolute;
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    line-height: 1.3;
+  }
+
+  &__title {
+    font-size: 3.5rem;
+    font-family: "Plain Bold";
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+  }
+
+  &__subtitle {
+    font-family: "Plain Light";
+    font-size: 1.6rem;
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+  }
+
+  &__link {
+    color: $white_color;
+    margin-right: 1.5rem;
+    text-transform: uppercase;
+    transition: 300ms ease-in-out color;
+
+    &:hover {
+      @include hover_link();
+    }
+  }
+
+  &__title,
+  &__buttons,
+  &__subtitle {
+    z-index: 10;
+  }
+}
+
+// Features ---------------------------------------
+
+.features {
+  background-color: $dark_color;
+  color: $white_color;
+  padding: 7rem 1rem;
+
+  &__title {
+    font-size: 2.4rem;
+    font-family: "Plain Bold";
+    margin-bottom: 1.3rem;
+  }
+
+  &__subtitle {
+    font-family: "Plain Light";
+    font-size: 1.5rem;
+    font-weight: 640;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    opacity: 0.6;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.7rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  &__feature:first-of-type {
+    width: 40%;
+    justify-self: center;
+    text-align: justify;
+    padding-right: 1rem;
+  }
+
+  &__feature:last-child {
+    padding-left: 3rem;
+    border-left: 2px solid #2e3032;
+  }
+
+  &__schedule {
+    margin-bottom: 1rem;
+  }
+
+  &__schedule-day {
+    font-family: "Plain Bold";
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  &__schedule-time {
+    font-family: "Plain Light";
+    font-size: 1.3rem;
+    opacity: 0.6;
+  }
+}
+
+// instructors -----------------------------------------
+.instructors {
+  background-color: $white_gray_color;
+  padding: 7rem 7rem 4rem 7rem;
+
+  &__title {
+    font-size: 2.4rem;
+    font-family: "Plain Bold";
+    color: $dark_text_color;
+    margin-bottom: 1.3rem;
+  }
+
+  &__text {
+    opacity: 0.5;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.7rem;
+    text-align: justify;
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__box:first-of-type {
+    padding-right: 4rem;
+    padding-top: 2rem;
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__cards {
+    display: flex;
+    gap: 2.5rem;
+    padding-bottom: 3rem;
+  }
+
+  &__cards > * {
+    width: 100%;
+    background-color: white;
+    flex-grow: 1;
+  }
+
+  &__card {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  }
+
+  &__name-card {
+    font-family: "Plain Bold";
+    font-size: 2.1rem;
+    color: $dark_text_color;
+  }
+
+  &__title-card {
+    opacity: 0.6;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    font-family: "Plain Light";
+  }
+
+  &__info {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__info:first-child {
+    width: 70%;
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+
+  &__icon {
+    font-size: 1.8rem;
+    color: $dark_text_color;
+    opacity: 0.6;
+    transition: 300ms ease-in-out all;
+  }
+
+  &__icon:hover {
+    @include hover_link();
+  }
+}
+
+.classes {
+  padding: 5rem 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+
+  &__wrapper {
+    padding: 2rem 0;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    font-family: "Plain Bold";
+    color: $dark_text_color;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-family: "Plain Light";
+    font-size: 1.6rem;
+    opacity: 0.4;
+    text-align: center;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__card {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  }
+
+  &__cards > * {
+    width: 33%;
+  }
+
+  &__info {
+    padding: 1.3rem 1.7rem 1.7rem 1.7rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__type {
+    font-family: "Plain Bold";
+    font-size: 2.1rem;
+    color: $dark_text_color;
+  }
+
+  &__trainer {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  &__name {
+    color: $dark_text_color;
+    font-family: "Plain Light";
+  }
+
+  &__trainer-description {
+    opacity: 0.7;
+    font-family: "Plain Bold";
+  }
+
+  &__text {
+    opacity: 0.6;
+    font-family: "Plain Light";
+    font-size: 1.3rem;
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__price {
+    background-color: $orange_color;
+    color: $white_color;
+    padding: 1.1rem;
+    border-radius: 50%;
+    font-family: "Plain Bold";
+  }
+}
+
+.workouts {
+  background-color: $dark_color;
+  color: $white_color;
+  padding: 7rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    text-align: center;
+    font-size: 2.4rem;
+    font-family: "Plain Bold";
+    color: $white_color;
+    margin-bottom: 2.2rem;
+  }
+
+  &__subtitle {
+    font-family: "Plain Light";
+    font-size: 1.6rem;
+    opacity: 0.4;
+    text-align: center;
+  }
+
+  &__table-headercolumn {
+    background-color: $orange_color;
+    padding: 1.1rem 2.1rem;
+    font-family: "Plain Bold";
+    font-size: 1.1rem;
+    text-transform: uppercase;
+  }
+
+  &__icon-calendar {
+    font-size: 1.7rem;
+  }
+
+  &__table-bodycolumn:first-child {
+    background-color: $orange_color;
+  }
+}

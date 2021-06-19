@@ -1,0 +1,6 @@
+@use "./colors" as *;
+
+@mixin hover_link {
+  color: $orange_color;
+  cursor: pointer;
+}
