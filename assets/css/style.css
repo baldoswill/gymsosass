@@ -411,16 +411,100 @@ ul {
 }
 .workouts__table-headercolumn {
   background-color: #f13a11;
-  padding: 1.1rem 2.1rem;
+  padding: 1rem 2.1rem;
   font-family: "Plain Bold";
   font-size: 1.1rem;
   text-transform: uppercase;
+  margin: 0 !important;
+  border-right: 1px solid #2b2b2b;
+}
+.workouts__table-headercolumn:last-child {
+  border-right: 0;
 }
 .workouts__icon-calendar {
   font-size: 1.7rem;
 }
+.workouts__table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 .workouts__table-bodycolumn:first-child {
   background-color: #f13a11;
+  border-bottom: 1px solid #2b2b2b;
+}
+.workouts__table-bodycolumn:first-child, .workouts__table-bodycolumn, .workouts__table-headercolumn:first-child {
+  padding: 1.1rem;
+  border-right: 1px solid #2b2b2b;
+  border-bottom: 1px solid #2b2b2b;
+  margin: 0;
+}
+.workouts__workout-type {
+  font-family: "Plain Bold";
+  font-size: 1.1rem;
+  display: block;
+  text-align: center;
+}
+.workouts__workout-time {
+  font-family: "Plain Light";
+  font-size: 1rem;
+  opacity: 0.4;
+  text-align: center;
+}
+
+.contact {
+  padding: 7rem 1rem;
+}
+.contact__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact__wrapper > * {
+  width: 40%;
+  grid-gap: 2rem;
+  gap: 2rem;
+}
+.contact__title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-family: "Plain Bold";
+  color: #212529;
+  margin-bottom: 2.2rem;
+}
+.contact__input {
+  width: 100%;
+  display: block;
+  border: 1px solid #bdbdbd;
+  margin-bottom: 1.6rem;
+  padding: 1.2rem 1rem;
+  outline: none;
+  color: #626262;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: 200ms ease-in-out all;
+}
+.contact__input:focus {
+  border: #171819 1px solid;
+}
+.contact__address {
+  opacity: 0.5;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.7rem;
+  text-align: justify;
+}
+.contact__map-box-title {
+  margin-bottom: 1.2rem;
+}
+.contact__location-icon {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: #f13a11;
+}
+.contact__location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map*/

@@ -436,17 +436,118 @@ ul {
 
   &__table-headercolumn {
     background-color: $orange_color;
-    padding: 1.1rem 2.1rem;
+    padding: 1rem 2.1rem;
     font-family: "Plain Bold";
     font-size: 1.1rem;
     text-transform: uppercase;
+    margin: 0 !important;
+    border-right: 1px solid $medium_gray_color;
+  }
+
+  &__table-headercolumn:last-child {
+    border-right: 0;
   }
 
   &__icon-calendar {
     font-size: 1.7rem;
   }
 
+  &__table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
   &__table-bodycolumn:first-child {
     background-color: $orange_color;
+    border-bottom: 1px solid $medium_gray_color;
+  }
+
+  &__table-bodycolumn:first-child,
+  &__table-bodycolumn,
+  &__table-headercolumn:first-child {
+    padding: 1.1rem;
+    border-right: 1px solid $medium_gray_color;
+    border-bottom: 1px solid $medium_gray_color;
+    margin: 0;
+  }
+
+  &__workout-type {
+    font-family: "Plain Bold";
+    font-size: 1.1rem;
+    display: block;
+    text-align: center;
+  }
+
+  &__workout-time {
+    font-family: "Plain Light";
+    font-size: 1rem;
+    opacity: 0.4;
+    text-align: center;
+  }
+}
+
+// Contact ------------------------------------
+
+.contact {
+  padding: 7rem 1rem;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__wrapper > * {
+    width: 40%;
+    gap: 2rem;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 2.4rem;
+    font-family: "Plain Bold";
+    color: $dark_text_color;
+    margin-bottom: 2.2rem;
+  }
+
+  &__input {
+    width: 100%;
+    display: block;
+    border: 1px solid $light_gray_color;
+    margin-bottom: 1.6rem;
+    padding: 1.2rem 1rem;
+    outline: none;
+    color: #626262;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: 200ms ease-in-out all;
+
+    &:focus {
+      border: $dark_color 1px solid;
+    }
+  }
+
+  &__address {
+    opacity: 0.5;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.7rem;
+    text-align: justify;
+  }
+
+  &__map-box-title {
+    margin-bottom: 1.2rem;
+  }
+
+  &__location-icon {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: $orange_color;
+  }
+
+  &__location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
