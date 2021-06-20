@@ -571,3 +571,30 @@ ul {
     margin-bottom: 2rem;
   }
 }
+
+.footer {
+  border-top: 1px solid $light_gray_color2;
+  padding: 4rem 1rem;
+  color: $light_gray_color3;
+  font-size: 1.2rem;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__wrapper > * {
+    width: 40%;
+  }
+
+  &__email-wrapper {
+    justify-self: flex-end;
+    margin-right: 1rem;
+  }
+
+  &__icon {
+    color: $orange_color;
+    font-size: 1.4rem;
+  }
+}
