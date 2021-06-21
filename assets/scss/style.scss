@@ -180,6 +180,7 @@ ul {
     font-size: 1.5rem;
     font-weight: 640;
     margin-bottom: 1rem;
+    word-break: break-all;
   }
 
   &__text {
@@ -187,6 +188,7 @@ ul {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 1.7rem;
+    word-break: break-all;
   }
 
   &__wrapper {
@@ -196,11 +198,14 @@ ul {
     gap: 3rem;
   }
 
+  &__wrapper > * {
+    flex-basis: 100%;
+  }
+
   &__feature:first-of-type {
-    width: 40%;
     justify-self: center;
     text-align: justify;
-    padding-right: 1rem;
+    padding-left: 7rem;
   }
 
   &__feature:last-child {
@@ -243,6 +248,7 @@ ul {
     font-weight: 600;
     margin-bottom: 1.7rem;
     text-align: justify;
+    word-break: break-all;
   }
 
   &__wrapper {
@@ -267,9 +273,8 @@ ul {
   }
 
   &__cards > * {
-    width: 100%;
+    flex-basis: 100%;
     background-color: white;
-    flex-grow: 1;
   }
 
   &__card {
@@ -361,7 +366,7 @@ ul {
   }
 
   &__cards > * {
-    width: 33%;
+    flex-basis: 100%;
   }
 
   &__info {
@@ -498,7 +503,7 @@ ul {
   }
 
   &__wrapper > * {
-    width: 50%;
+    flex-basis: 100%;
     gap: 2rem;
   }
 
@@ -580,16 +585,16 @@ ul {
 
   &__wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
   }
 
   &__wrapper > * {
-    width: 40%;
+    flex-basis: 100%;
+    text-align: center;
   }
 
   &__email-wrapper {
-    justify-self: flex-end;
+    justify-self: flex-end !important;
     margin-right: 1rem;
   }
 
