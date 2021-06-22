@@ -26,7 +26,7 @@ ul {
 }
 
 .container {
-  max-width: 1160px;
+  max-width: 90%;
   margin: auto;
   overflow: auto;
 }
@@ -100,12 +100,12 @@ ul {
 
 .hero {
   background-image: url("../images/hero-bg.jpg");
-  background-position: center -200px;
+  background-position: center 60%;
   background-repeat: no-repeat;
   background-size: cover;
   height: 88vh;
   color: $white_color;
-  padding: 0 1rem;
+  position: relative;
 
   &::before {
     content: "";
@@ -254,6 +254,11 @@ ul {
   &__wrapper {
     display: flex;
     gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  &__wrapper > * {
+    flex: 1 1 40%;
   }
 
   &__box:first-of-type {
@@ -270,10 +275,11 @@ ul {
     display: flex;
     gap: 2.5rem;
     padding-bottom: 3rem;
+    flex-wrap: wrap;
   }
 
   &__cards > * {
-    flex-basis: 100%;
+    flex: 1 1 40%;
     background-color: white;
   }
 
@@ -601,5 +607,196 @@ ul {
   &__icon {
     color: $orange_color;
     font-size: 1.4rem;
+  }
+}
+
+// Responsiveness
+
+@media screen and (max-width: 1000px) {
+  .features,
+  .instructors,
+  .classes {
+    &__title,
+    &__subtitle {
+      word-break: keep-all;
+      text-align: center !important;
+    }
+
+    &__text {
+      word-break: keep-all !important;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .hero {
+    &::before {
+      bottom: 0 !important;
+      height: 100%;
+    }
+
+    &__wrapper {
+      width: 100%;
+    }
+  }
+
+  .features {
+    &__title {
+      text-align: center;
+      word-break: keep-all;
+      margin-bottom: 2rem !important;
+    }
+
+    &__subtitle {
+      word-break: keep-all;
+      margin-bottom: 1rem !important;
+    }
+
+    &__text {
+      word-break: keep-all;
+    }
+
+    &__wrapper {
+      display: block;
+      gap: 0;
+    }
+
+    &__wrapper > * {
+      width: 100% !important;
+      padding: 0 !important;
+    }
+
+    &__feature {
+      padding: 0 I !important;
+      border: none !important;
+    }
+
+    &__feature > *:first-of-type {
+      margin-bottom: 3rem;
+    }
+  }
+
+  // Instructors
+  .instructors {
+    padding: 7rem 0 !important;
+    &__title {
+      text-align: center;
+    }
+    &__wrapper {
+      display: block;
+      gap: 0;
+    }
+
+    &__wrapper > * {
+      width: 100% !important;
+      padding: 0 !important;
+    }
+
+    &__text {
+      word-break: keep-all !important;
+    }
+
+    &__cards {
+      display: block;
+    }
+
+    &__cards > * {
+      width: 100%;
+    }
+
+    &__cards > *:not(:last-of-type) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  // Classes
+  .classes {
+    &__title {
+      text-align: center;
+      word-break: keep-all !important;
+    }
+    &__cards {
+      display: block;
+      gap: 0;
+    }
+
+    &__cards > * {
+      width: 100% !important;
+      padding: 0 !important;
+    }
+
+    &__cards > *:not(:last-of-type) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  // Instructors
+  .instructors {
+    &__title {
+      text-align: center;
+    }
+    &__wrapper {
+      display: block;
+      gap: 0;
+    }
+
+    &__wrapper > * {
+      width: 100% !important;
+      padding: 0 !important;
+    }
+
+    &__text {
+      word-break: keep-all !important;
+    }
+
+    &__cards {
+      display: block;
+    }
+
+    &__cards > * {
+      width: 100%;
+    }
+
+    &__cards > *:not(:last-of-type) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  // Workouts
+
+  .workouts {
+    overflow-x: scroll;
+  }
+
+  // Contact
+  .contact {
+    &__title {
+      text-align: center;
+      word-break: keep-all !important;
+    }
+    &__wrapper {
+      display: block;
+      gap: 0;
+    }
+
+    &__wrapper > * {
+      width: 100% !important;
+      padding: 0 !important;
+    }
+
+    &__wrapper > *:not(:last-of-type) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .footer {
+    padding: 3rem 2rem;
+    &__wrapper {
+      display: block;
+    }
+
+    &__wrapper > *:first-of-type {
+      margin-bottom: 1rem;
+    }
   }
 }
