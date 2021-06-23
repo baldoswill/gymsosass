@@ -9,12 +9,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: $white_color;
   line-height: 1.6;
   font-family: $plain_light;
+  position: relative;
 }
 
 a {
@@ -39,6 +41,11 @@ ul {
   padding: 1rem;
   z-index: 10 !important;
   position: sticky;
+  top: 0;
+
+  &__menu-bar {
+    display: none;
+  }
 
   &__wrapper {
     display: flex;
@@ -76,6 +83,10 @@ ul {
     &:hover {
       @include hover_link();
     }
+  }
+
+  &__link--active {
+    color: $orange_color;
   }
 
   &__socials {
@@ -158,7 +169,7 @@ ul {
   &__title,
   &__buttons,
   &__subtitle {
-    z-index: 10;
+    z-index: 2;
   }
 }
 
@@ -613,6 +624,83 @@ ul {
 // Responsiveness
 
 @media screen and (max-width: 1000px) {
+  .nav {
+    &__links,
+    &__socials {
+      display: none;
+    }
+
+    &__wrapper {
+      justify-content: space-between;
+    }
+
+    &__menu-bar {
+      z-index: 22;
+      display: inline-block !important;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__bar {
+      height: 3px;
+      margin-bottom: 8px;
+      background-color: $orange_color;
+      width: 35px;
+      transition: ease-in-out all 300ms;
+    }
+
+    &__bar:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &__menu-bar:hover &__bar {
+      background-color: $white_color;
+    }
+
+    &__menu-bar--active &__bar:nth-of-type(2) {
+      display: none;
+    }
+
+    &__menu-bar--active &__bar:nth-of-type(1) {
+      transform: rotate(45deg) translateY(8px);
+    }
+
+    &__menu-bar--active &__bar:nth-of-type(3) {
+      transform: rotate(-45deg) translateY(-7px);
+    }
+
+    &__links {
+      background-color: $dark_color;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: absolute;
+      top: -999px;
+      left: 0;
+      bottom: 0;
+      height: 100vh;
+      z-index: 10;
+      margin: 0;
+      transition: ease-in-out all 200ms;
+    }
+
+    &__links--active {
+      top: 0;
+    }
+
+    &__item {
+      margin-bottom: 2rem;
+    }
+
+    &__brand {
+      width: 100%;
+    }
+  }
+
   .features,
   .instructors,
   .classes {
