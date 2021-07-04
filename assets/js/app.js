@@ -26,21 +26,35 @@ links.forEach((link) => {
   });
 });
 
-const options = {};
+const options = {
+  rootMargin: "0px 0px -50% 0px",
+};
 
 const observer = new IntersectionObserver(function (entries, observer) {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
       return;
     }
-    console.log(entry.target);
+
     links.forEach((link) => {
       if ("#" + entry.target.id === link.getAttribute("href")) {
         link.classList.add("nav__link--active");
+        observer.disconnect(entry);
       } else {
         link.classList.remove("nav__link--active");
       }
     });
+
+    let el = document.querySelector("#" + entry.target.id);
+
+    if (el) {
+      console.log(el.className);
+      if (!el.classList.contains(`${el.className}__wrapper--fadeOut`)) {
+        el.classList.add(`${el.className}__wrapper--fadeOut`);
+      } else {
+        el.classList.remove(`${el.className}__wrapper--fadeOut`);
+      }
+    }
   });
 }, options);
 

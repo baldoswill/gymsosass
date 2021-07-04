@@ -114,7 +114,7 @@ ul {
   background-position: center 60%;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 88vh;
+  height: 100vh;
   color: $white_color;
   position: relative;
 
@@ -146,6 +146,12 @@ ul {
     font-family: "Plain Bold";
     text-transform: uppercase;
     margin-bottom: 1.8rem;
+    opacity: 0;
+    transition: 2s ease-in-out all;
+  }
+
+  &__wrapper--fadeOut &__title {
+    opacity: 1;
   }
 
   &__subtitle {
@@ -210,7 +216,42 @@ ul {
   }
 
   &__wrapper > * {
-    flex-basis: 100%;
+    flex: 1 1 100%;
+    opacity: 0;
+
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  &__wrapper > *:nth-of-type(1) {
+    transform: translateX(-300px);
+  }
+
+  &__wrapper > *:nth-of-type(2) {
+    transform: translateX(900px);
+  }
+
+  &__wrapper--fadeOut > *:nth-of-type(1) {
+    animation-delay: 1s;
+    transform: translateX(0);
+  }
+
+  &__wrapper--fadeOut > *:nth-of-type(2) {
+    animation-delay: 2s;
+    transform: translateX(0);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   &__feature:first-of-type {
@@ -270,6 +311,32 @@ ul {
 
   &__wrapper > * {
     flex: 1 1 40%;
+    opacity: 0;
+    transform: translateY(-900px);
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-300px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__wrapper--fadeOut > *:nth-of-type(1) {
+    animation-delay: 2s;
+  }
+
+  &__wrapper--fadeOut > *:nth-of-type(2) {
+    animation-delay: 3s;
   }
 
   &__box:first-of-type {
