@@ -44,19 +44,25 @@
         <h1 class="nav__brand">GymSo Fitness</h1>
         <ul class="nav__links">
           <li class="nav__item">
-            <a href="#home" class="nav__link">Home</a>
+            <a href="#home" class="nav__link" data-link="home">Home</a>
           </li>
           <li class="nav__item">
-            <a href="#aboutus" class="nav__link">About Us</a>
+            <a href="#aboutus" class="nav__link" data-link="aboutus"
+              >About Us</a
+            >
           </li>
           <li class="nav__item">
-            <a href="#classes" class="nav__link">Classes</a>
+            <a href="#classes" class="nav__link" data-link="classes">Classes</a>
           </li>
           <li class="nav__item">
-            <a href="#schedules" class="nav__link">Schedules</a>
+            <a href="#schedules" class="nav__link" data-link="schedules"
+              >Schedules</a
+            >
           </li>
           <li class="nav__item">
-            <a href="#contactus" class="nav__link">Contact</a>
+            <a href="#contactus" class="nav__link" data-link="contactus"
+              >Contact</a
+            >
           </li>
         </ul>
         <ul class="nav__socials">
@@ -83,7 +89,7 @@
         </div>
       </div>
     </nav>
-    <section class="hero" id="home">
+    <section class="hero" id="home" data-link="home">
       <div class="hero__wrapper container">
         <h3 class="hero__subtitle">New way to build a healthy lifestyle!</h3>
         <h1 class="hero__title">Upgrade your body at Gymso Fitness</h1>
@@ -95,7 +101,7 @@
         </div>
       </div>
     </section>
-    <section class="features" id="aboutus">
+    <section class="features" id="aboutus" data-link="aboutus">
       <div class="features__wrapper container">
         <div class="features__feature">
           <h2 class="features__title">New to the gymso?</h2>
@@ -128,7 +134,7 @@
         </div>
       </div>
     </section>
-    <section class="instructors" id="instructors">
+    <section class="instructors" id="instructors" data-link="aboutus">
       <div class="instructors__wrapper container">
         <div class="instructors__box">
           <h2 class="instructors__title">Hello, we are Gymso</h2>
@@ -201,7 +207,7 @@
         </div>
       </div>
     </section>
-    <section class="classes" id="classes">
+    <section class="classes" id="classes" data-link="classes">
       <div class="classes__wrapper container">
         <h3 class="classes__subtitle">Get A Perfect Body</h3>
         <h2 class="classes__title">Our Training Classes</h2>
@@ -275,7 +281,7 @@
         </div>
       </div>
     </section>
-    <section class="workouts" id="schedules">
+    <section class="workouts" id="schedules" data-link="schedules">
       <div class="workouts__wrapper container">
         <h3 class="workouts__subtitle">Our Weekly GYM Schedules</h3>
         <h2 class="workouts__title">Workout Timetable</h2>
@@ -377,7 +383,7 @@
         </table>
       </div>
     </section>
-    <section class="contact" id="contactus">
+    <section class="contact" id="contactus" data-link="contactus">
       <div class="contact__wrapper container">
         <div class="contact__form-box">
           <h2 class="contact__title contact__form-box-title">
@@ -459,6 +465,6 @@
         </div>
       </div>
     </footer>
-    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/app.js" defer></script>
   </body>
 </html>

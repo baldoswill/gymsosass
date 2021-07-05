@@ -507,6 +507,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 
   &__title {
     text-align: center;
@@ -525,7 +526,7 @@ ul {
 
   &__table-headercolumn {
     background-color: $orange_color;
-    padding: 1rem 2.1rem;
+    padding: 1rem 1rem;
     font-family: "Plain Bold";
     font-size: 1.1rem;
     text-transform: uppercase;
@@ -544,6 +545,7 @@ ul {
   &__table {
     border-collapse: collapse;
     border-spacing: 0;
+    border-right: 1px solid $medium_gray_color;
   }
 
   &__table-bodycolumn:first-child {
