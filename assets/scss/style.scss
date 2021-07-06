@@ -217,16 +217,16 @@ ul {
 
   &__wrapper > * {
     flex: 1 1 100%;
-    opacity: 0;
+    
 
     animation-name: fadeIn;
-    animation-duration: 2s;
+    animation-duration: 5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }
 
   &__wrapper > *:nth-of-type(1) {
-    transform: translateX(-300px);
+    transform: translateX(-900px);
   }
 
   &__wrapper > *:nth-of-type(2) {
@@ -234,12 +234,12 @@ ul {
   }
 
   &__wrapper--fadeOut > *:nth-of-type(1) {
-    animation-delay: 1s;
+    animation-delay: 2s;
     transform: translateX(0);
   }
 
   &__wrapper--fadeOut > *:nth-of-type(2) {
-    animation-delay: 2s;
+    animation-delay: 7s;
     transform: translateX(0);
   }
 
@@ -311,10 +311,9 @@ ul {
 
   &__wrapper > * {
     flex: 1 1 40%;
-    opacity: 0;
-    transform: translateY(-900px);
+ 
     animation-name: fadeIn;
-    animation-duration: 3s;
+    animation-duration: 5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }
@@ -322,7 +321,7 @@ ul {
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(-300px);
+      transform: translateY(-900px);
     }
 
     to {
@@ -336,7 +335,7 @@ ul {
   }
 
   &__wrapper--fadeOut > *:nth-of-type(2) {
-    animation-delay: 3s;
+    animation-delay: 7s;
   }
 
   &__box:first-of-type {
@@ -452,6 +451,7 @@ ul {
   &__cards > * {
     flex-basis: 100%;
   }
+ 
 
   &__info {
     padding: 1.3rem 1.7rem 1.7rem 1.7rem;

@@ -64,20 +64,19 @@ const observerOnce = new IntersectionObserver(function (entries, observer) {
     if (!entry.isIntersecting) {
       return;
     }
-
-    let el = document.querySelector("#" + entry.target.id);
-
-    if (el) {
-      console.log(el);
-      // el.classList.add(`${el.className}__wrapper--fadeOut`);
-      observer.unobserve(entry);
+ 
+    if (entry.target) {
+      console.log(entry.target);      
+      entry.target.classList.add(`${entry.target.className}__wrapper--fadeOut`);
+      observer.unobserve(entry.target);
     }
   });
 }, options);
 
 sections.forEach((section) => {
   observer.observe(section);
-  observerOnce.observe(section);
+  let el = document.querySelector("#" + section.id);
+  observerOnce.observe(el);
 });
 
 // observer.observe(home);
