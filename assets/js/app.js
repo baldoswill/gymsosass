@@ -27,7 +27,7 @@ links.forEach((link) => {
 });
 
 const options = {
-  rootMargin: "0px 0px -50% 0px",
+  rootMargin: "-50% 0px -50% 0px",
 };
 
 const observer = new IntersectionObserver(function (entries, observer) {
@@ -59,19 +59,22 @@ const observer = new IntersectionObserver(function (entries, observer) {
   });
 }, options);
 
+const optionsOnce = {};
+
 const observerOnce = new IntersectionObserver(function (entries, observer) {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
       return;
     }
- 
+
     if (entry.target) {
-      console.log(entry.target);      
+      console.log(entry.target);
       entry.target.classList.add(`${entry.target.className}__wrapper--fadeOut`);
+      console.log(entry.target.className);
       observer.unobserve(entry.target);
     }
   });
-}, options);
+}, optionsOnce);
 
 sections.forEach((section) => {
   observer.observe(section);
